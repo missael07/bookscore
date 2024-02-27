@@ -1,0 +1,1 @@
+import{O as o,Ra as a,kb as r}from"./chunk-G5B5QU4L.js";var d=(()=>{let e=class e{};e.\u0275fac=function(n){return new(n||e)},e.\u0275cmp=o({type:e,selectors:[["app-dashboard-page"]],standalone:!0,features:[a],decls:0,vars:0,template:function(n,s){},dependencies:[r],encapsulation:2,changeDetection:0});let t=e;return t})();export{d as default};
