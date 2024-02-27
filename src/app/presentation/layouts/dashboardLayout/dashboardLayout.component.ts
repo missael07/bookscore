@@ -21,8 +21,15 @@ export class DashboardLayoutComponent {
 
   menuService = inject(MenuService);
 
+  displayMenu() {
+    this.menuService.hideMenu.set(!this.hideMenu);
+  }
 
   get hideMenu() {
     return this.menuService.hideMenu()
+  }
+
+  get displayHeader() {
+    return this.menuService.displayHeader()
   }
  }

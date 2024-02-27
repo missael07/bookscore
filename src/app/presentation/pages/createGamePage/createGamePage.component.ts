@@ -18,7 +18,7 @@ export default class CreateGamePageComponent {
   menuService = inject(MenuService);
 
   displayMenu() {
-    this.menuService.hideMenu.set(false)
+    this.menuService.displayHeader.set(true)
   }
 
 }

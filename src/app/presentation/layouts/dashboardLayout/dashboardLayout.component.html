@@ -1,8 +1,14 @@
 <main class="flex flex-col sm:flex-row">
     <nav
-      class="hidden sm:flex flex-col w-[250px] min-h-[100vh] bg-white bg-opacity-10 border-r-2"
+      class=" flex flex-col sm:w-[250px] sm:min-h-[100vh] bg-white bg-opacity-10 border-r-2"
+      [class.hidden]="!displayHeader"
     >
-      <span class="text-xl p-2">Bienvenido</span>
+      <span class="text-xl p-2 flex justify-between" >
+        Bienvenido 
+        <i class="fa-solid fa-bars sm:hidden" (click)="displayMenu()"></i></span>
+      <span> 
+        
+      </span>
   
       <div class="border-gray-700 border my-3"></div>
   
@@ -13,17 +19,6 @@
       [title]="route.data!['title']" [path]="route.path!" /> 
       }
     </nav>
-    <nav
-    class="sm:hidden flex flex-col" [class.hidden]="hideMenu"
-  >
-
-    <!-- Nav Links -->
-    @for(route of routes; track route.path) {
-    <app-sidebar-menu-item
-    [description]="route.data!['description']" [icon]="route.data!['icon']"
-    [title]="route.data!['title']" [path]="route.path!"/> 
-    }
-  </nav>
     <section
       class="mx-3 sm:mx-20 flex flex-col sm:w-full h-[calc(100vh-50px)] bg-white bg-opacity-10 p-5 rounded-3xl"
     >

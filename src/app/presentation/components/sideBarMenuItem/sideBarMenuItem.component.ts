@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { MenuService } from '../../../services/menu.service';
 
 @Component({
   selector: 'app-sidebar-menu-item',
@@ -13,6 +14,7 @@ import { RouterModule } from '@angular/router';
     [routerLink]="path"
     routerLinkActive="bg-gray-800 text-white"
     class="flex justify-center items-center hover:bg-gray-800 hover: sm:rounded-md p2 transition-colors"
+    [class.hidden]="hideMenu"
   >
     <i class="{{ icon }} text-2xl mr-4"></i>
     <div class="flex flex-col flex-grow">
@@ -28,4 +30,11 @@ export class SideBarMenuItemComponent {
   @Input({ required: true }) title!: string;
   @Input({ required: true }) description!: string;
   @Input({ required: true }) path!: string;
+
+
+  menuService = inject(MenuService);
+
+  get hideMenu(){
+    return this.menuService.hideMenu();
+  }
 }

@@ -18,6 +18,7 @@ export default class GamesPageComponent {
 
 
   hideMenu(){
-    this.menuService.hideMenu.set(true);
+    this.menuService.displayHeader.set(false);
+    this.menuService.hideMenu.set(true)
   }
 }
